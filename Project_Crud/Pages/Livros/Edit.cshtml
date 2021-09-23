@@ -1,0 +1,65 @@
+﻿@page
+@model Project_Crud.Pages.Livros.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Livro</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Livro.Id_Livro" />
+            <div class="form-group">
+                <label asp-for="Livro.Titulo" class="control-label"></label>
+                <input asp-for="Livro.Titulo" class="form-control" />
+                <span asp-validation-for="Livro.Titulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Livro.Editora" class="control-label"></label>
+                <input asp-for="Livro.Editora" class="form-control" />
+                <span asp-validation-for="Livro.Editora" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Livro.Isbn" class="control-label"></label>
+                <input asp-for="Livro.Isbn" class="form-control" />
+                <span asp-validation-for="Livro.Isbn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Livro.Ano" class="control-label"></label>
+                <input asp-for="Livro.Ano" class="form-control" />
+                <span asp-validation-for="Livro.Ano" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Livro.Autor" class="control-label"></label>
+                <input asp-for="Livro.Autor" class="form-control" />
+                <span asp-validation-for="Livro.Autor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Livro.Preco" class="control-label"></label>
+                <input asp-for="Livro.Preco" class="form-control" />
+                <span asp-validation-for="Livro.Preco" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Livro.Categoria" class="control-label"></label>
+                <input asp-for="Livro.Categoria" class="form-control" />
+                <span asp-validation-for="Livro.Categoria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
