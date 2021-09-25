@@ -2,16 +2,35 @@
 @model Project_Crud.Pages.Livros.DeleteModel
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Deletar Livro";
 }
 
-<h1>Delete</h1>
+<style>
+    .btn-back-page {
+        width: 77px;
+        height: 68px;
+        background-color: #212529 !important;
+        color: #FFFF;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 8px;
+        margin: 18px;
+        transition: 0.2s
+    }
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
+        .btn-back-page:hover {
+            filter: brightness(50%);
+            color: #FFFF;
+        }
+</style>
+
+<h1>Apagar</h1>
+
+<h3>Deseja Apagar o Livro? -  @Html.DisplayFor(model => model.Livro.Titulo)</h3>
+<div style="margin:20px">
     <h4>Livro</h4>
     <hr />
-    <dl class="row">
+    <dl class="row" style="margin:20px">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Livro.Titulo)
         </dt>
@@ -57,8 +76,9 @@
     </dl>
     
     <form method="post">
+        <a asp-page="Index" class="btn-back-page" style="margin:20px"><i class="fas fa-arrow-left"></i>&nbsp;Voltar</a>
         <input type="hidden" asp-for="Livro.Id_Livro" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-page="./Index">Back to List</a>
+        <input type="submit" value="Apagar" class="btn btn-danger" />
+
     </form>
 </div>

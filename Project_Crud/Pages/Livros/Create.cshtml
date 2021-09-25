@@ -5,13 +5,72 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<style>
+    .btn-back-page {
+        width: 100px;
+        height: 50px;
+        background-color: #212529 !important;
+        color: #FFFF;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 8px;
+        margin: 18px;
+        transition: 0.2s
+    }
 
-<h4>Livro</h4>
+        .btn-back-page:hover {
+            filter: brightness(50%);
+            color: #FFFF;
+        }
+
+    .row-form {
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .column-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    input {
+        margin: 10px;
+        width:200px
+    }
+
+    .form-control{
+        width:96%;
+    }
+    .form-container {
+        width: 100%;
+        background-color: #F3F3F3;
+        padding: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius: 12px;
+    }
+    .form-group > label{
+        margin:10px;
+    }
+    .text-danger{
+        margin:10px;
+    }
+
+
+</style>
+
+
+
+<h1 style="margin:20px">Criar Novo Livro</h1>
+<a asp-page="Index" class="btn-back-page" style="margin:20px"><i class="fas fa-arrow-left"></i>&nbsp;Voltar</a>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
+<div class="row-form">
+    <div class="col-md-4 column-form">
+        <form method="post" class="form-container">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Livro.Titulo" class="control-label"></label>
@@ -49,15 +108,13 @@
                 <span asp-validation-for="Livro.Categoria" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Enviar" class="btn btn-primary btn-back-page" style="width:91%;" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

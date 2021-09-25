@@ -2,13 +2,33 @@
 @model Project_Crud.Pages.Livros.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Lista de Livros";
 }
 
-<h1>Index</h1>
+<style>
+    .btn-new-book {
+        width: 100px;
+        height: 50px;
+        background-color: #212529 !important;
+        color: #FFFF;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 8px;
+        margin: 18px;
+        transition:0.2s
+    }
+        .btn-new-book:hover {
+            filter: brightness(50%);
+            color: #FFFF;
+        }
+</style>
 
-<p>
-    <a asp-page="Create">Create New</a>
+<h1 style="margin:20px">Lista de Livros</h1>
+
+<p style="margin-top:40px">
+    <a asp-page="Create" class="btn-new-book">
+        Criar Novo
+    </a>
 </p>
 <table class="table">
     <thead>
@@ -62,9 +82,9 @@
                 @Html.DisplayFor(modelItem => item.Categoria)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id_Livro">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id_Livro">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id_Livro">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.Id_Livro">Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id_Livro">Detalhes</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id_Livro">Apagar</a>
             </td>
         </tr>
 }

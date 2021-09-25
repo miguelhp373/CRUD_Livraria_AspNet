@@ -3,8 +3,55 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<style>
+    .carousel-inner > .carousel-item > img {
+        width: 100% !important;
+        height: 580px !important;
+        object-fit: cover !important;
+        filter: blur(2px) !important;
+    }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    .carousel-caption-text-center {
+        position: absolute !important;
+        z-index: 999 !important;
+        color: #fff !important;
+        height: 100vh !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+    }
+
+        .carousel-caption-text-center > h1 {
+            display: flex;
+            flex-direction: column !important;
+            justify-content: center !important;
+        }
+
+
+
+</style>
+<div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+    <!-- <ol class="carousel-indicators">
+        <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
+        <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
+    </ol> -->
+    <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+            <img src="~/assets/Index_image.jpg" alt="First slide">
+        </div>
+        <div class="carousel-caption-text-center">
+            <h1>Bem Vindo Ao Maior Acervo de Livros Online.</h1>
+        </div>
+    </div>
+
+    <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button> -->
 </div>

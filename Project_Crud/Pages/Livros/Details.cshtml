@@ -5,12 +5,38 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<style>
+    .btn-back-page {
+        width: 100px;
+        height: 50px;
+        background-color: #212529 !important;
+        color: #FFFF;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 8px;
+        margin: 18px;
+        transition: 0.2s
+    }
 
-<div>
-    <h4>Livro</h4>
+        .btn-back-page:hover {
+            filter: brightness(50%);
+            color: #FFFF;
+        }
+    .btn-container {
+        margin: 20px 0px 0px 0px;
+    }
+</style>
+<div class="btn-container">
+    <a asp-page="Index" class="btn-back-page" style="margin:20px;margin-top:40px;"><i class="fas fa-arrow-left"></i>&nbsp;Voltar</a>
+    <a asp-page="./Edit" class="btn-back-page" asp-route-id="@Model.Livro.Id_Livro"><i class="fas fa-pen"></i>&nbsp;Editar</a> 
+</div>
+<h1 style="margin:25px">@Html.DisplayFor(model => model.Livro.Titulo)</h1>
+
+<div style="margin:20px">
+
+    <h4 style="margin:25px">Livro</h4>
     <hr />
-    <dl class="row">
+    <dl class="row" style="margin:20px">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Livro.Titulo)
         </dt>
@@ -56,6 +82,5 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Livro.Id_Livro">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+   
 </div>
